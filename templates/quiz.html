@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="brand">
+                <div class="logo">Q</div>
+                <div>
+                    <div class="title">Quiz ODS</div>
+                    <div class="subtitle">Responda as perguntas abaixo</div>
+                </div>
+            </div>
+        </header>
+
+        <form method="post" class="card">
+        {% for q in questions %}
+            <section>
+                <div class="question">{{ loop.index }}. {{ q.question }}</div>
+                <div class="choices">
+                    {% set qidx = loop.index0 %}
+                    {% for opt in q.options %}
+                        <label class="choice">
+                            <input type="radio" name="q{{ qidx }}" value="{{ opt }}" required>
+                            <span class="label">{{ opt }}</span>
+                        </label>
+                    {% endfor %}
+                </div>
+            </section>
+        {% endfor %}
+            <div class="actions">
+                <div></div>
+                <div class="right-actions">
+                    <button class="btn" type="submit">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+</html>

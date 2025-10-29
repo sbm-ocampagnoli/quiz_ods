@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quiz ODS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="brand">
+                <div class="logo">Q</div>
+                <div>
+                    <div class="title">Quiz ODS 4</div>
+                    <div class="subtitle">Educação de Qualidade</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="card center">
+            <h1 class="question">Teste seus conhecimentos sobre ODS 4</h1>
+            <a class="btn" href="{{ url_for('quiz') }}">Começar o Quiz</a>
+        </section>
+    </main>
+</body>
+</html>

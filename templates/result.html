@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Resultado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="brand">
+                <div class="logo">Q</div>
+                <div>
+                    <div class="title">Resultado do Quiz</div>
+                    <div class="subtitle">Obrigado por participar</div>
+                </div>
+            </div>
+        </header>
+
+        <section class="card result">
+            <div class="big">Você acertou {{ score }} de {{ total }} perguntas!</div>
+            <div class="sub">Compartilhe ou tente novamente para melhorar seu resultado.</div>
+            <div style="margin-top:16px;">
+                <a class="btn" href="{{ url_for('quiz') }}">Tentar de novo</a>
+                <a class="btn secondary" href="{{ url_for('index') }}">Voltar ao início</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
