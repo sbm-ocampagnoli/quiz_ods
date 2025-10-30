@@ -21,23 +21,25 @@
         <form method="post" class="card">
         {% for q in questions %}
             <section>
-                <div class="question">{{ loop.index }}. {{ q.question }}</div>
-                <div class="choices">
-                    {% set qidx = loop.index0 %}
-                    {% for opt in q.options %}
-                        <label class="choice">
-                            <input type="radio" name="q{{ qidx }}" value="{{ opt }}" required>
-                            <span class="label">{{ opt }}</span>
-                        </label>
-                    {% endfor %}
-                </div>
+            <div class="question">{{ loop.index }}. {{ q.question }}</div>
+            <div class="choices">
+                {% set qidx = loop.index0 %}
+                {% for opt in q.options %}
+                <label class="choice">
+                    <input type="radio" name="q{{ qidx }}" value="{{ opt }}" required>
+                    <span class="label">{{ opt }}</span>
+                </label>
+                {% endfor %}
+            </div>
             </section>
         {% endfor %}
             <div class="actions">
-                <div></div>
-                <div class="right-actions">
-                    <button class="btn" type="submit">Enviar</button>
-                </div>
+            <div>
+                <button type="button" class="btn" onclick="location.href='{{ url_for('index') }}'">Voltar</button>
+            </div>
+            <div class="right-actions">
+                <button class="btn" type="submit">Enviar</button>
+            </div>
             </div>
         </form>
     </main>
